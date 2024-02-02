@@ -37,5 +37,6 @@ class Occurrence(models.Model):
 
 class Event(models.Model):
     startingDate = models.DateField(blank=False)
-    eventTitle = models.CharField(max_length=250, blank=False)
+    eventTitle = models.CharField(max_length=120, blank=False)
+    eventDescription = models.CharField(max_length=250, blank=False)
     eventLocation = models.ManyToManyField(Location)

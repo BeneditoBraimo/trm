@@ -35,3 +35,7 @@ class Occurrence(models.Model):
     def __str__(self):
         return(self.occurrenceType, self.occurrenceDescription, self.occurrenceStatus)
 
+class Event(models.Model):
+    startingDate = models.DateField(blank=False)
+    eventTitle = models.CharField(max_length=250, blank=False)
+    eventLocation = models.ForeignKey(Location, on_delete=models.PROTECT)

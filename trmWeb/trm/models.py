@@ -40,3 +40,6 @@ class Event(models.Model):
     eventTitle = models.CharField(max_length=150, blank=False)
     eventDescription = models.CharField(max_length=250, blank=False)
     eventLocation = models.ManyToManyField(Location)
+
+    def __str__(self):
+        return(self.eventTitle, self.startingDate)

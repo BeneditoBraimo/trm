@@ -13,3 +13,6 @@ class Recommendation(models.Model):
     description = models.CharField(max_length=500, blank=False)
     relevance = models.CharField(max_length=20)
     agent = models.ForeignKey(Agent, on_delete=models.PROTECT, blank=False)
+
+    def __str__(self):
+        return (self.description, self.relevance)

@@ -38,4 +38,4 @@ class Occurrence(models.Model):
 class Event(models.Model):
     startingDate = models.DateField(blank=False)
     eventTitle = models.CharField(max_length=250, blank=False)
-    eventLocation = models.ForeignKey(Location, on_delete=models.PROTECT)
+    eventLocation = models.ManyToManyField(Location)

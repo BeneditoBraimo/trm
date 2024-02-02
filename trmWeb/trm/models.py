@@ -6,7 +6,7 @@ class Agent(models.Model):
     code = models.CharField(max_length=11, blank=False, unique=True)
 
     def __str__(self):
-        return str(self.firstName, self.lastName)
+        return (self.firstName, self.lastName)
     
 
 class Recommendation(models.Model):

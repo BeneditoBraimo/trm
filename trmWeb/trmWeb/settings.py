@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'trm',
 ]
 
 MIDDLEWARE = [
@@ -119,7 +120,7 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     # Add the path to your Bootstrap files or any other static files
-    BASE_DIR / "trmWeb\trm\static",
+    BASE_DIR / "",
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

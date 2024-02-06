@@ -19,7 +19,7 @@ class Recommendation(models.Model):
     
 class Location(models.Model):
     name = models.CharField(max_length=60, blank=False)
-    description = models.Charfield(max_length=100)
+    description = models.CharField(max_length=100)
 
     def __str__(self):
         return (self.name)

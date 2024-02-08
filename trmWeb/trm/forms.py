@@ -1,5 +1,5 @@
 from django import forms
-from models import Agent, Recommendation, Event, Occurrence, Location
+from .models import Agent, Recommendation, Event, Occurrence, Location
 
 class AgentForm(forms.ModelForm):
     class Meta:

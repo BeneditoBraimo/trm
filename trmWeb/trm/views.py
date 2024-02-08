@@ -5,4 +5,10 @@ def index(request):
     title = 'Home'
     return render(request, "index.html", {'title':title})
 
-# Create your views here.
+def addEvent(request):
+    title = 'Event added successfully'
+    if request.method == 'POST':
+        event = EventForm(request.POST)
+        if event.is_valid():
+            event.save()
+    return render(request,'index.html', {'title': title})

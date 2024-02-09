@@ -16,6 +16,13 @@ class EventForm(forms.ModelForm):
         model = Event
         fields = '__all__'
 
+    labels = {
+        'startingDate': 'Starting date',
+        'eventTitle': 'Event title',
+        'eventDescription:': 'Event description',
+        'EventLocation': 'Event location'
+    }
+
 class OccurrenceForm(forms.ModelForm):
     class Meta:
         model = Occurrence

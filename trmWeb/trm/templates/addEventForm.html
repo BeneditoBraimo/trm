@@ -1,0 +1,8 @@
+{% extends 'index.html'%}
+{%block content %}
+<form class="form-control" name="eventForm" action="{% url 'addEvent'%}">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-primary" type="submit">Schedule Event</button>
+</form>
+{% endblock %}

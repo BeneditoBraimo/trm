@@ -7,11 +7,11 @@ def index(request):
 
 def addEvent(request):
     title = 'Event form'
+    event = EventForm()
     if request.method == 'POST':
         event = EventForm(request.POST)
         if event.is_valid():
             event.save()
             return render(request,'index.html', {'title': title})
-        else:
-            event = EventForm()
-    return render(request, "addEventForm.html", {'title': title})
+            
+    return render(request, "addEventForm.html", {'form': event})

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Location
+from .models import Location, Event
 
 def index(request):
     title = 'Home'
@@ -15,5 +15,13 @@ def addEvent(request):
         eventLocation = request.POST.get('eventLocation')
 
         location = Location.objects.get(name=eventLocation)
-        locationId = Location.id
+        locationId = location.id
+
+        event = Event(
+            startingDate = startingDate,
+            eventTitle = eventTitle,
+            eventDescription = eventDescription,
+            eventLocation = locationId
+        )
+        event.save()
     return render(request, "addEventForm.html", {'title': title})

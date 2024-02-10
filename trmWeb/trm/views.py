@@ -24,4 +24,7 @@ def addEvent(request):
             eventLocation = locationId
         )
         event.save()
-    return render(request, "addEventForm.html", {'title': title})
+        # add code to load 'success' template
+
+    locations = Location.objects.all()
+    return render(request, "addEventForm.html", {'title': title, 'locations': locations})

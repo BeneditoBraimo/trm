@@ -25,7 +25,7 @@
             </p>
         </div>
         <div class="mb-3">
-            <select class="form-select mb-3" aria-label="Select the location..." name="location" id="locationId">
+            <select class="form-select mb-3" aria-label="Select the location..." name="eventLocation" id="locationId">
                 <option selected>Choose a location...</option>
                 {% for location in locations %}
                     <option value="{{location.id}}">{{location.name}}</option>

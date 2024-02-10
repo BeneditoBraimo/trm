@@ -24,6 +24,15 @@
                 placeholder="Provide a description for this event..."></textarea>
             </p>
         </div>
+        <div class="mb-3">
+            <select class="form-select mb-3" aria-label="Select the location...">
+                <option selected>Choose a location...</option>
+                {% for location in locations %}
+                    <option value="{{location.id}}">{{location.name}}</option>
+                {% endfor %}    
+            </select>
+            
+        </div>
         <div class="container d-flex justify-content-center">
             <button class="btn btn-primary" type="submit">Schedule Event</button>
             &nbsp;&nbsp;

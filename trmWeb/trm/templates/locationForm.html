@@ -4,7 +4,9 @@
     <div class="container d-flex justify-content-center" >
         <div class="container" style="max-width: 600px;">
             <h3>Location form</h3>
+
             <form action="{% url 'addLocation' %}" class="form-control" name="locationForm" method="post">
+                {% csrf_token %}
                 <div class="mb-3">
                     <p>
                         <label for="Name">Name</label>

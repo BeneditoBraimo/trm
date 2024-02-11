@@ -5,6 +5,10 @@ def index(request):
     title = 'Home'
     return render(request, "index.html", {'title':title})
 
+
+def addLocation(request):
+    title = 'Locatio form'
+    
 def addEvent(request):
     title = 'Event form'
     if request.method == 'POST':

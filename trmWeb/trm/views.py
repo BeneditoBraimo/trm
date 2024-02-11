@@ -7,7 +7,20 @@ def index(request):
 
 
 def addLocation(request):
-    title = 'Locatio form'
+    title = 'Location form'
+
+    if request.method == 'POST':
+        locationName = request.POST.get('name')
+        locationDescription = request.POST.get('description')
+
+        location = Location(
+            name = locationName,
+            description=locationDescription
+        )
+
+        location.save()
+        return redirect('successPage.html')
+    return render(request, 'locationForm.html', {'title': title})
     
 def addEvent(request):
     title = 'Event form'

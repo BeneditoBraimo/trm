@@ -1,9 +1,10 @@
 {% extends 'index.html'%}
 {%block content %}
-<br>
 <div class="container" style="max-width: 850px;" >
     <br>
-    <form class="form-control" name="eventForm" action="{% url 'addEvent'%}">
+    <h3>Event form</h3>
+    <br>
+    <form class="form form-control" name="eventForm" action="{% url 'addEvent'%}">
         {% csrf_token %}
         <div class="mb-3">
             <p>
@@ -25,6 +26,7 @@
             </p>
         </div>
         <div class="mb-3">
+            <label for="location">Location</label>
             <select class="form-select mb-3" aria-label="Select the location..." name="eventLocation" id="locationId" required>
                 <option selected>Choose a location...</option>
                 {% for location in locations %}

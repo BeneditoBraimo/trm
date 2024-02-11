@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Location, Event
 
 def index(request):
@@ -25,6 +25,8 @@ def addEvent(request):
         )
         event.save()
         # add code to load 'success' template
+        objName = "event"
+        return redirect('sucessPage.html')
 
     locations = Location.objects.all()
     return render(request, "addEventForm.html", {'title': title, 'locations': locations})

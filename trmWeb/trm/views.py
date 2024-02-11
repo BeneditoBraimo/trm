@@ -1,6 +1,11 @@
 from django.shortcuts import render, redirect
 from .models import Location, Event
 
+def successPage(request):
+    title = "success"
+    return render(request, 'successPage.html', {'title': title})
+
+
 def index(request):
     title = 'Home'
     return render(request, "index.html", {'title':title})
@@ -19,7 +24,7 @@ def addLocation(request):
         )
 
         location.save()
-        return redirect('successPage.html')
+        return redirect(successPage)
     return render(request, 'locationForm.html', {'title': title})
     
 def addEvent(request):
@@ -43,7 +48,7 @@ def addEvent(request):
         event.save()
         # add code to load 'success' template
         objName = "event"
-        return redirect('sucessPage.html')
+        return redirect(successPage)
 
     locations = Location.objects.all()
     return render(request, "addEventForm.html", {'title': title, 'locations': locations})

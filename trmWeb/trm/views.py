@@ -7,7 +7,7 @@ def successPage(request):
 
 
 def index(request):
-    title = 'Home'
+    title = 'TRM'
     return render(request, "index.html", {'title':title})
 
 

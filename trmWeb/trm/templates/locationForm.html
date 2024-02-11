@@ -1,8 +1,31 @@
 {% extends 'index.html' %}
 {% block content %}
-    <div class="containar">
-        <form action="{% url 'addLocation' %}">
-
-        </form>
+<br>
+    <div class="container d-flex justify-content-center" >
+        <div class="container" style="max-width: 600px;">
+            <h3>Location form</h3>
+            <form action="{% url 'addLocation' %}" class="form-control" name="locationForm" method="post">
+                <div class="mb-3">
+                    <p>
+                        <label for="Name">Name</label>
+                        <input type="text" name="name" class="form-control" placeholder="Insert the name of the location...">
+                    </p>
+                </div>
+                
+                <div class="mb-3">
+                    <p>
+                        <label for="Description">Description</label>
+                        <textarea name="description" id="description" cols="60" rows="4" class="form-control" placeholder="Add a description..."></textarea>
+                    </p>
+                </div>
+                <div class="container d-flex justify-content-center">
+                    <p>
+                        <button type="reset" class="btn btn-danger">Clear fields</button>
+                        &nbsp;&nbsp;
+                        <button type="submit" class="btn btn-success">Add location</button>
+                    </p>
+                </div>
+            </form>
+        </div>
     </div>
 {%endblock%}

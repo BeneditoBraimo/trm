@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container d-flex justify-content-center" style="max-width: 800px;">
+    <form class="form form-control" name="reportIncidentForm" action="{% url 'reportIncident'%}">
+        {% scrf_token %}
+    </form>
+</div>
+{% endblock %}

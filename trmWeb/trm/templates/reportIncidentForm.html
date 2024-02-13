@@ -3,7 +3,17 @@
 {% block content %}
 <div class="container d-flex justify-content-center" style="max-width: 800px;">
     <form class="form form-control" name="reportIncidentForm" action="{% url 'reportIncident'%}">
-        {% scrf_token %}
+        {% csrf_token %}
+        <div class="mb-3">
+            <p>
+                <label for="occurrence Type">Occurrence type</label>
+                <input name="occurrenceType" list="occurrenceTypes" class="form-control" placeholder="Occurrence types...">
+                <datalist id="occurrenceTypes">
+                    {% for ocType in occurrenceTypeList %}
+                    <option value="{{ocType.name}}">
+                </datalist>
+            </p>
+        </div>
     </form>
 </div>
 {% endblock %}

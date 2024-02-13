@@ -36,12 +36,12 @@ class IncidentType(models.Model):
         return (self.name)
 
 class Occurrence(models.Model):
-    occurrenceType = models.CharField(max_length=100, blank=False)
+    incidentType = models.ForeignKey(IncidentType, on_delete=models.PROTECT)
     occurrenceDate = models.DateField(blank=False)
     occurrenceDescription = models.CharField(max_length=200, blank=False)
     occurrenceStatus = models.CharField(max_length=15, blank=False)
     location = models.ForeignKey(Location, on_delete=models.PROTECT, blank=False)
-    agent = models.ForeignKey(Agent, on_delete=models.PROTECT)
+    agent = models.ForeignKey(Agent, on_delete=models.PROTECT, blank=True)
 
     def __str__(self):
         return(self.occurrenceType, self.occurrenceDescription, self.occurrenceStatus)

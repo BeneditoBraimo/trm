@@ -23,7 +23,18 @@ class Location(models.Model):
 
     def __str__(self):
         return (self.name)
-    
+
+
+"""
+    define OccurrenceType class model
+    which has 'one-to-many' relationship with Occurrence class model
+""" 
+class IncidentType(models.Model):
+    name = models.CharField(max_length=100, blank=False, unique=True)
+
+    def __str__(self):
+        return (self.name)
+
 class Occurrence(models.Model):
     occurrenceType = models.CharField(max_length=100, blank=False)
     occurrenceDate = models.DateField(blank=False)

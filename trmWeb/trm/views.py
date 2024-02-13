@@ -52,3 +52,8 @@ def addEvent(request):
 
     locations = Location.objects.all()
     return render(request, "addEventForm.html", {'title': title, 'locations': locations})
+
+def reportIncidend(request):
+    title = "Incident form"
+
+    return render(request, 'reportIncidentForm.html', {'title': title})

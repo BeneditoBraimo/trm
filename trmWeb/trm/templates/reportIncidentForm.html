@@ -6,11 +6,12 @@
         {% csrf_token %}
         <div class="mb-3">
             <p>
-                <label for="occurrence Type">Occurrence type</label>
-                <input name="occurrenceType" list="occurrenceTypes" class="form-control" placeholder="Occurrence types...">
-                <datalist id="occurrenceTypes">
-                    {% for ocType in occurrenceTypeList %}
-                    <option value="{{ocType.name}}">
+                <label for="occurrence Type">Incident type</label>
+                <input name="incidentType" list="incidentTypes" class="form-control" placeholder="Occurrence types...">
+                <datalist id="incidentTypes">
+                    {% for incidentType in incidentTypeList %}
+                    <option value="{{incidentType.name}}">
+                    {% endfor %}
                 </datalist>
             </p>
         </div>

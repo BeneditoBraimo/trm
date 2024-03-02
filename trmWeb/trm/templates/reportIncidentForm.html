@@ -2,7 +2,9 @@
 
 {% block content %}
 <br>
-<h3>Incident form</h3>
+<div class="container" style="max-width: 800px;">
+    <h3>Incident form</h3>
+</div>
 <div class="container d-flex justify-content-center" style="max-width: 800px;">
     <form class="form form-control" name="reportIncidentForm" action="{% url 'reportIncident'%}">
         {% csrf_token %}
